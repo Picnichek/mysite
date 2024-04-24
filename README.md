@@ -38,6 +38,8 @@
     ```
 * В файле "fixtures.json" уже есть тестовые данные и суперпользователь:
     - admin(пароль:admin)
+    - 	test_customer(1Qaz2wsx!)
+    - 	test_performer(1Qaz2wsx!)
     ```bash
         python manage.py loaddata fixtures.json
     ```
