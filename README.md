@@ -25,7 +25,7 @@
     DB_ENGINE=django.db.backends.postgresql
     DB_NAME=mysite # имя вашей БД
     POSTGRES_USER=postgres # пользователь
-    POSTGRES_PASSWORD=20061996 # пароль
+    POSTGRES_PASSWORD=postgres # пароль
     DB_HOST=127.0.0.1
     DB_PORT=5432
     ```
