@@ -1,0 +1,51 @@
+{% load static %}
+<header>
+  <nav class="navbar navbar-light" style="background-color: lightskyblue">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'users:main' %}">Логотип сайта</a>
+      {% with request.resolver_match.view_name as view_name %}
+      <ul class="nav nav-pills">
+        {% if user.is_authenticated %}
+        {% if user.user_type == "CU" %}
+        <li class="nav-item">
+          <a class="nav-link link-light {% if view_name  == "profiles:customer_profile" %}
+            active
+            {% endif %}"
+            href="{% url "profiles:customer_profile" %}">Профиль</a>
+          </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link link-light {% if view_name  == "profiles:performer_profile" %}
+            active
+            {% endif %}"
+            href="{% url "profiles:performer_profile" %}">Профиль</a>
+          </li>
+          {% endif %}
+        <li class="nav-item">
+          <a class="nav-link link-light {% if view_name  == "users:logout" %}
+            active
+            {% endif %}"
+            href="{% url "users:logout" %}">Выйти</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link">Пользователь: {{ user.username }}</a>
+        </li>
+      {% else %}
+        <li class="nav-item">
+          <a class="nav-link link-light {% if view_name  == "users:login" %}
+            active
+            {% endif %}"
+            href="{% url "users:login" %}">Войти</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link link-light {% if view_name  == "users:signup" %}
+            active
+            {% endif %}"
+            href="{% url "users:signup" %}">Регистрация</a>
+        </li>
+      {% endif %}
+      {% endwith %}
+    </ul>
+    </div>
+  </nav>
+</header>
