@@ -1,6 +1,6 @@
 # mysite
 
-### Локальный запуск
+### Локальный запуск:
 * Клонировать репозиторий в локальную папку:
     ```bash
     git clone https://github.com/Picnichek/mysite.git
